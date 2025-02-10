@@ -6,7 +6,9 @@
 - [Dataset Details](#dataset-details)
 - [Installation Guide](#installation-guide)  
 - [Model and Methodologies](#model-and-methodologies)  
-- [Outcomes and Evaluation](#outcomes-and-evaluation)  
+- [Outcomes and Evaluation](#outcomes-and-evaluation)
+- [Improvements](#improvements)
+    - [Tune KNN Model Using RandomizedSearchCV for Hyperparameter Optimization](#tune-knn-model-using-randomizedsearchcv-for-hyperparameter-optimization) 
 - [How to Use](#how-to-use)  
 - [Future Directions](#future-directions)
 
@@ -69,6 +71,35 @@ The model achieved an accuracy of 94% on the test set. Key performance metrics i
 - AUC score: 0.94
 
 Detailed performance metrics and visualizations are available in the results section of the repository.
+
+## Improvements
+
+This section aims to showcase several more robust models and data preprocessing techniques developed in this project, designed to enhance both the accuracy and interpretability of the results.
+
+1. **Hyperparameter tuning for the K-Nearest Neighbor (KNN) algorithm.**
+
+### Tune KNN Model Using RandomizedSearchCV for Hyperparameter Optimization
+
+In this updated version of the model, I have enhanced the K-Nearest Neighbors (KNN) algorithm through hyperparameter tuning using `RandomizedSearchCV`. This tuning method allows for a more efficient exploration of hyperparameter space, leading to the identification of optimal settings that improve model accuracy and performance.
+
+### Hyperparameter Tuning Details
+
+- **n_neighbors**: Tested a range from 1 to 10 to determine the most effective number of neighbors for classification.
+- **weights**: Evaluated both 'uniform' and 'distance' weighting to analyze their impact on predictions.
+- **metric**: Explored multiple distance metrics, including 'euclidean', 'manhattan', and 'minkowski'.
+- **algorithm**: Compared various algorithms such as 'auto', 'ball_tree', 'kd_tree', and 'brute' to find the most efficient method for neighbor search.
+- **p_value**: Incorporated values for the Minkowski distance power parameter, specifically 1 for Manhattan and 2 for Euclidean distances.
+- **leaf_size**: Adjusted the leaf size for tree-based algorithms, examining a range from 1 to 21.
+
+### Results Overview
+
+Despite the comprehensive tuning efforts, the model's performance metrics remained consistent with previous evaluations:  
+- **KNN Testing Accuracy**: 94.12%  
+- **KNN Tuning Accuracy**: 94.12%  
+- **AUC Score**: 94.15%  
+- **AUC after Tuning**: 94.15%  
+
+These results indicate that, while tuning practices are beneficial for exploring the potential of the model, this particular process did not yield an improvement in accuracy. This emphasizes the robustness of the initial settings and highlights the ongoing challenge of optimizing model performance in machine learning. Future work may explore additional feature engineering or alternative algorithms to further enhance predictive capabilities.
 
 ## How to Use
 
