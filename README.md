@@ -8,7 +8,8 @@
 - [Model and Methodologies](#model-and-methodologies)  
 - [Outcomes and Evaluation](#outcomes-and-evaluation)
 - [Improvements](#improvements)
-    - [Tune KNN Model Using RandomizedSearchCV for Hyperparameter Optimization](#tune-knn-model-using-randomizedsearchcv-for-hyperparameter-optimization) 
+    - [Tune KNN Model Using RandomizedSearchCV for Hyperparameter Optimization](#tune-knn-model-using-randomizedsearchcv-for-hyperparameter-optimization)
+    - [Implement MICE for missing value imputation](#implement-mice-for-missing-value-imputation)
 - [How to Use](#how-to-use)  
 - [Future Directions](#future-directions)
 
@@ -77,12 +78,13 @@ Detailed performance metrics and visualizations are available in the results sec
 This section aims to showcase several more robust models and data preprocessing techniques developed in this project, designed to enhance both the accuracy and interpretability of the results.
 
 1. **Hyperparameter tuning for the K-Nearest Neighbor (KNN) algorithm.**
+2. **Implement MICE for missing value imputation**
 
 ### Tune KNN Model Using RandomizedSearchCV for Hyperparameter Optimization
 
 In this updated version of the model, I have enhanced the K-Nearest Neighbors (KNN) algorithm through hyperparameter tuning using `RandomizedSearchCV`. This tuning method allows for a more efficient exploration of hyperparameter space, leading to the identification of optimal settings that improve model accuracy and performance.
 
-### Hyperparameter Tuning Details
+#### Hyperparameter Tuning Details
 
 - **n_neighbors**: Tested a range from 1 to 10 to determine the most effective number of neighbors for classification.
 - **weights**: Evaluated both 'uniform' and 'distance' weighting to analyze their impact on predictions.
@@ -91,7 +93,7 @@ In this updated version of the model, I have enhanced the K-Nearest Neighbors (K
 - **p_value**: Incorporated values for the Minkowski distance power parameter, specifically 1 for Manhattan and 2 for Euclidean distances.
 - **leaf_size**: Adjusted the leaf size for tree-based algorithms, examining a range from 1 to 21.
 
-### Results Overview
+#### Results Overview
 
 Despite the comprehensive tuning efforts, the model's performance metrics remained consistent with previous evaluations:  
 - **KNN Testing Accuracy**: 94.12%  
@@ -100,6 +102,10 @@ Despite the comprehensive tuning efforts, the model's performance metrics remain
 - **AUC after Tuning**: 94.15%  
 
 These results indicate that, while tuning practices are beneficial for exploring the potential of the model, this particular process did not yield an improvement in accuracy. This emphasizes the robustness of the initial settings and highlights the ongoing challenge of optimizing model performance in machine learning. Future work may explore additional feature engineering or alternative algorithms to further enhance predictive capabilities.
+
+### Implement MICE for missing value imputation
+
+A recent update includes a method to handle missing values using Multiple Imputation by Chained Equations (MICE). MICE allows for a more robust handling of missing data by generating multiple imputed datasets and combining the results for improved accuracy and reliability. This approach enhances the overall model performance and provides more credible predictions, making it particularly beneficial for analyses where missing data is a concern.
 
 ## How to Use
 
