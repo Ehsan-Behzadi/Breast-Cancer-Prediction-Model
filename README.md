@@ -10,6 +10,7 @@
 - [Improvements](#improvements)
     - [Tune KNN Model Using RandomizedSearchCV for Hyperparameter Optimization](#tune-knn-model-using-randomizedsearchcv-for-hyperparameter-optimization)
     - [Implement MICE for missing value imputation](#implement-mice-for-missing-value-imputation)
+    - [RobustScaler to Scaling Methods](#robustscaler-to-scaling-methods)
 - [How to Use](#how-to-use)  
 - [Future Directions](#future-directions)
 
@@ -79,6 +80,7 @@ This section aims to showcase several more robust models and data preprocessing 
 
 1. **Hyperparameter tuning for the K-Nearest Neighbor (KNN) algorithm.**
 2. **Implement MICE for missing value imputation**
+3. **RobustScaler to Scaling Methods**
 
 ### Tune KNN Model Using RandomizedSearchCV for Hyperparameter Optimization
 
@@ -106,6 +108,20 @@ These results indicate that, while tuning practices are beneficial for exploring
 ### Implement MICE for missing value imputation
 
 A recent update includes a method to handle missing values using Multiple Imputation by Chained Equations (MICE). MICE allows for a more robust handling of missing data by generating multiple imputed datasets and combining the results for improved accuracy and reliability. This approach enhances the overall model performance and provides more credible predictions, making it particularly beneficial for analyses where missing data is a concern.
+
+### RobustScaler to Scaling Methods
+
+In this update, I have incorporated the RobustScaler scaling method into my Breast Cancer Wisconsin machine learning model.
+
+RobustScaler is a normalization technique that scales features using statistics that are robust to outliers, specifically the median and the interquartile range (IQR). This makes it particularly useful for datasets containing outliers, as it centers the data around the median and scales it according to the IQR, thereby reducing the influence of extreme values.
+
+While the RobustScaler method is beneficial for improving the performance of models on datasets with outliers, the results from this implementation did not exceed the performance of prior scaling techniques. The results achieved are as follows:
+
+- **Z-Standard Scaling**: 0.9529
+- **Min-Max Scaling**: 0.9441
+- **RobustScaler Scaling**: 0.9382
+
+The RobustScaler result of 0.9382 indicates that, although it provides a robust solution against outliers, it did not improve the model's performance compared to Z-standard and Min-Max scaling methods.
 
 ## How to Use
 
