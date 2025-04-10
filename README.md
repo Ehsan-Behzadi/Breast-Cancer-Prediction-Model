@@ -11,6 +11,7 @@
     - [Tune KNN Model Using RandomizedSearchCV for Hyperparameter Optimization](#tune-knn-model-using-randomizedsearchcv-for-hyperparameter-optimization)
     - [Implement MICE for missing value imputation](#implement-mice-for-missing-value-imputation)
     - [RobustScaler to Scaling Methods](#robustscaler-to-scaling-methods)
+    - [Implement Lasso Regression for feature selection](#implement-lasso-regression-for-feature-selection)
 - [How to Use](#how-to-use)  
 - [Future Directions](#future-directions)
 
@@ -81,6 +82,7 @@ This section aims to showcase several more robust models and data preprocessing 
 1. **Hyperparameter tuning for the K-Nearest Neighbor (KNN) algorithm.**
 2. **Implement MICE for missing value imputation**
 3. **RobustScaler to Scaling Methods**
+4. **Implement Lasso Regression for feature selection**
 
 ### Tune KNN Model Using RandomizedSearchCV for Hyperparameter Optimization
 
@@ -122,6 +124,21 @@ While the RobustScaler method is beneficial for improving the performance of mod
 - **RobustScaler Scaling**: 0.9382
 
 The RobustScaler result of 0.9382 indicates that, although it provides a robust solution against outliers, it did not improve the model's performance compared to Z-standard and Min-Max scaling methods.
+
+### Implement Lasso Regression for feature selection
+
+This update applies **Lasso Regression** for feature selection on the Breast Cancer Wisconsin dataset. Lasso Regression (Least Absolute Shrinkage and Selection Operator) is a linear regression technique that utilizes L1 regularization. This method not only decreases the complexity of the model but also encourages sparsity by shrinking some coefficients to zero. This characteristic makes Lasso particularly suitable for feature selection, as it effectively selects a subset of features while reducing the risk of overfitting. Key benefits include:
+   1. **Automatic Feature Selection**: Retains only relevant features.
+   2. **Interpretability**: Simplifies the model for easier understanding.
+   3. **Reduced Overfitting**: Focuses on critical predictors.
+
+#### Results
+
+The Lasso Regression method achieved an accuracy of **93.21%**, slightly lower than the previous method, **Recursive Feature Elimination (93.44%)**.
+Lasso is effective for feature selection, enhancing model interpretability and avoiding overfitting, even if it didn’t outperform RFE in accuracy.
+
+- **Update Note:**  
+Also in this update, the ROC curve for the KNN model has also been refreshed to reflect the latest results and provide a clearer comparison of model performance.
 
 ## How to Use
 
